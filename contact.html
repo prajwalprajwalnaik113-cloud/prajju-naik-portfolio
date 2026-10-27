@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | My Portfolio</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #050816;
+            color: white;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           ANIMATED BACKGROUND
+        ========================== */
+
+        .background {
+            position: fixed;
+            inset: 0;
+
+            z-index: -10;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(56, 189, 248, 0.14),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(139, 92, 246, 0.15),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #020617,
+                    #050816,
+                    #0f172a
+                );
+        }
+
+
+        /* =========================
+           LARGE GLOWING ORBS
+        ========================== */
+
+        .orb {
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            filter: blur(90px);
+
+            opacity: 0.25;
+
+            animation:
+                moveOrb 12s infinite alternate ease-in-out;
+        }
+
+        .orb-one {
+            background: #06b6d4;
+
+            top: -120px;
+            left: -100px;
+        }
+
+        .orb-two {
+            background: #8b5cf6;
+
+            right: -120px;
+            bottom: -100px;
+
+            animation-delay: 3s;
+        }
+
+        @keyframes moveOrb {
+
+            0% {
+                transform:
+                    translate(0, 0)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    translate(100px, -50px)
+                    scale(1.15);
+            }
+
+            100% {
+                transform:
+                    translate(-60px, 80px)
+                    scale(0.9);
+            }
+        }
+
+
+        /* =========================
+           SMALL MOVING DOTS
+        ========================== */
+
+        .particle {
+
+            position: absolute;
+
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background: #38bdf8;
+
+            box-shadow:
+                0 0 6px #38bdf8,
+                0 0 15px #38bdf8;
+
+            opacity: 0.7;
+
+            animation:
+                particleMove
+                linear
+                infinite;
+        }
+
+
+        .particle:nth-child(3n) {
+
+            background: #a78bfa;
+
+            box-shadow:
+                0 0 6px #a78bfa,
+                0 0 15px #a78bfa;
+        }
+
+
+        .particle:nth-child(4n) {
+
+            background: #22d3ee;
+
+            box-shadow:
+                0 0 6px #22d3ee,
+                0 0 15px #22d3ee;
+        }
+
+
+        .particle:nth-child(5n) {
+
+            width: 3px;
+            height: 3px;
+
+            opacity: 0.5;
+        }
+
+
+        /* =========================
+           DOT MOVEMENT
+        ========================== */
+
+        @keyframes particleMove {
+
+            0% {
+
+                transform:
+                    translate3d(0, 0, 0)
+                    scale(0.5);
+
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            50% {
+
+                transform:
+                    translate3d(80px, -120px, 0)
+                    scale(1.2);
+
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 0.7;
+            }
+
+            100% {
+
+                transform:
+                    translate3d(-100px, -250px, 0)
+                    scale(0.3);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================
+           PARTICLE POSITIONS
+        ========================== */
+
+        .particle-1 {
+            left: 5%;
+            top: 80%;
+            animation-duration: 9s;
+        }
+
+        .particle-2 {
+            left: 12%;
+            top: 55%;
+            animation-duration: 12s;
+            animation-delay: 2s;
+        }
+
+        .particle-3 {
+            left: 20%;
+            top: 90%;
+            animation-duration: 10s;
+            animation-delay: 1s;
+        }
+
+        .particle-4 {
+            left: 28%;
+            top: 65%;
+            animation-duration: 14s;
+            animation-delay: 4s;
+        }
+
+        .particle-5 {
+            left: 35%;
+            top: 30%;
+            animation-duration: 11s;
+            animation-delay: 2s;
+        }
+
+        .particle-6 {
+            left: 42%;
+            top: 85%;
+            animation-duration: 13s;
+            animation-delay: 5s;
+        }
+
+        .particle-7 {
+            left: 50%;
+            top: 45%;
+            animation-duration: 10s;
+            animation-delay: 3s;
+        }
+
+        .particle-8 {
+            left: 58%;
+            top: 75%;
+            animation-duration: 15s;
+            animation-delay: 1s;
+        }
+
+        .particle-9 {
+            left: 65%;
+            top: 25%;
+            animation-duration: 12s;
+            animation-delay: 6s;
+        }
+
+        .particle-10 {
+            left: 72%;
+            top: 60%;
+            animation-duration: 9s;
+            animation-delay: 2s;
+        }
+
+        .particle-11 {
+            left: 80%;
+            top: 85%;
+            animation-duration: 13s;
+            animation-delay: 4s;
+        }
+
+        .particle-12 {
+            left: 88%;
+            top: 40%;
+            animation-duration: 11s;
+            animation-delay: 1s;
+        }
+
+        .particle-13 {
+            left: 94%;
+            top: 70%;
+            animation-duration: 14s;
+            animation-delay: 5s;
+        }
+
+        .particle-14 {
+            left: 15%;
+            top: 15%;
+            animation-duration: 10s;
+            animation-delay: 3s;
+        }
+
+        .particle-15 {
+            left: 45%;
+            top: 10%;
+            animation-duration: 13s;
+            animation-delay: 7s;
+
+            width: 4px;
+            height: 4px;
+        }
+
+        .particle-16 {
+            left: 75%;
+            top: 15%;
+            animation-duration: 12s;
+            animation-delay: 2s;
+
+            width: 3px;
+            height: 3px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        header {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background:
+                rgba(5, 8, 22, 0.72);
+
+            backdrop-filter: blur(20px);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+        nav {
+
+            max-width: 1250px;
+
+            height: 75px;
+
+            margin: auto;
+
+            padding: 0 25px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        .logo {
+
+            color: white;
+
+            font-size: 26px;
+
+            font-weight: 900;
+
+            letter-spacing: -1px;
+
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+
+            display: flex;
+
+            list-style: none;
+
+            gap: 30px;
+        }
+
+        .nav-links a {
+
+            color: #cbd5e1;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            position: relative;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        .nav-links a::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 0;
+            height: 2px;
+
+            bottom: -8px;
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #38bdf8,
+                    #a78bfa
+                );
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links .active {
+            color: #38bdf8;
+        }
+
+        .nav-links .active::after {
+            width: 100%;
+        }
+
+
+        /* =========================
+           CONTACT SECTION
+        ========================== */
+
+        .contact-section {
+
+            min-height: 100vh;
+
+            padding:
+                140px 7%
+                90px;
+        }
+
+
+        /* =========================
+           MAIN HEADING CONTAINER
+        ========================== */
+
+        .heading {
+
+            max-width: 800px;
+
+            margin:
+                0 auto 60px;
+
+            text-align: center;
+
+            perspective: 1000px;
+        }
+
+
+        /* =========================
+           SMALL HEADING
+        ========================== */
+
+        .heading small {
+
+            display: inline-block;
+
+            color: #00f5ff;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            animation:
+                smallHeadingGlow
+                2s ease-in-out
+                infinite alternate;
+
+            text-shadow:
+                0 0 8px
+                rgba(0,245,255,0.5);
+        }
+
+
+        /* =========================
+           MAIN "LET'S CONNECT"
+        ========================== */
+
+        .heading h1 {
+
+            position: relative;
+
+            display: inline-block;
+
+            font-size:
+                clamp(42px, 6vw, 68px);
+
+            margin:
+                15px 0 25px;
+
+            font-weight: 900;
+
+            letter-spacing: -2px;
+
+            color: #f8fafc;
+
+            opacity: 0;
+
+            animation:
+                mainHeadingReveal
+                1.2s
+                cubic-bezier(0.22, 1, 0.36, 1)
+                forwards,
+
+                mainHeadingFloat
+                5s
+                ease-in-out
+                1.2s
+                infinite;
+
+            text-shadow:
+                0 0 10px
+                rgba(255,255,255,0.15),
+
+                0 0 30px
+                rgba(56,189,248,0.18);
+        }
+
+
+        /* =========================
+           "CONNECT" COLOR
+        ========================== */
+
+        .heading h1 span {
+
+            display: inline-block;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    90deg,
+
+                    #00f5ff 0%,
+                    #38bdf8 20%,
+                    #818cf8 40%,
+                    #a855f7 60%,
+                    #ec4899 80%,
+                    #00f5ff 100%
+                );
+
+            background-size: 400% 100%;
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            animation:
+                connectGradient
+                5s
+                linear
+                infinite,
+
+                connectGlow
+                2s
+                ease-in-out
+                infinite
+                alternate;
+        }
+
+
+        /* =========================
+           CONNECT UNDERLINE
+        ========================== */
+
+        .heading h1 span::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -9px;
+
+            width: 100%;
+
+            height: 4px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #00f5ff,
+                    #818cf8,
+                    #ec4899,
+                    #00f5ff
+                );
+
+            background-size: 300% 100%;
+
+            box-shadow:
+                0 0 8px #00f5ff,
+                0 0 18px #818cf8,
+                0 0 28px
+                rgba(236,72,153,0.5);
+
+            animation:
+                underlineAnimation
+                3s
+                linear
+                infinite;
+        }
+
+
+        /* =========================
+           HEADING REVEAL
+        ========================== */
+
+        @keyframes mainHeadingReveal {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translateY(70px)
+                    scale(0.65)
+                    rotateX(30deg);
+
+                filter:
+                    blur(15px);
+            }
+
+            50% {
+
+                opacity: 1;
+
+                transform:
+                    translateY(-8px)
+                    scale(1.06)
+                    rotateX(0deg);
+
+                filter:
+                    blur(0);
+            }
+
+            75% {
+
+                transform:
+                    translateY(3px)
+                    scale(0.98);
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1)
+                    rotateX(0deg);
+
+                filter:
+                    blur(0);
+            }
+        }
+
+
+        /* =========================
+           HEADING FLOAT
+        ========================== */
+
+        @keyframes mainHeadingFloat {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+
+                transform:
+                    translateY(-8px);
+            }
+        }
+
+
+        /* =========================
+           GRADIENT ANIMATION
+        ========================== */
+
+        @keyframes connectGradient {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            25% {
+                background-position: 100% 50%;
+            }
+
+            50% {
+                background-position: 200% 50%;
+            }
+
+            75% {
+                background-position: 300% 50%;
+            }
+
+            100% {
+                background-position: 400% 50%;
+            }
+        }
+
+
+        /* =========================
+           CONNECT GLOW
+        ========================== */
+
+        @keyframes connectGlow {
+
+            0% {
+
+                filter:
+                    drop-shadow(
+                        0 0 4px
+                        rgba(0,245,255,0.25)
+                    );
+            }
+
+            50% {
+
+                filter:
+                    drop-shadow(
+                        0 0 12px
+                        rgba(0,245,255,0.65)
+                    );
+            }
+
+            100% {
+
+                filter:
+                    drop-shadow(
+                        0 0 18px
+                        rgba(236,72,153,0.65)
+                    )
+
+                    drop-shadow(
+                        0 0 30px
+                        rgba(129,140,248,0.45)
+                    );
+            }
+        }
+
+
+        /* =========================
+           UNDERLINE ANIMATION
+        ========================== */
+
+        @keyframes underlineAnimation {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 300% 50%;
+            }
+        }
+
+
+        /* =========================
+           SMALL TEXT ANIMATION
+        ========================== */
+
+        @keyframes smallHeadingGlow {
+
+            0% {
+
+                opacity: 0.65;
+
+                text-shadow:
+                    0 0 5px
+                    rgba(0,245,255,0.25);
+            }
+
+            100% {
+
+                opacity: 1;
+
+                text-shadow:
+                    0 0 10px #00f5ff,
+                    0 0 25px #38bdf8,
+                    0 0 40px
+                    rgba(0,245,255,0.4);
+            }
+        }
+
+
+        /* =========================
+           HEADING DESCRIPTION
+        ========================== */
+
+        .heading p {
+
+            color: #94a3b8;
+
+            line-height: 1.8;
+
+            font-size: 15px;
+
+            opacity: 0;
+
+            animation:
+                paragraphReveal
+                1.2s
+                ease
+                0.5s
+                forwards;
+        }
+
+
+        @keyframes paragraphReveal {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(25px);
+
+                filter:
+                    blur(6px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+                filter:
+                    blur(0);
+            }
+        }
+
+
+        /* =========================
+           CONTACT GRID
+        ========================== */
+
+        .contact-container {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                0.8fr 1.2fr;
+
+            gap: 30px;
+        }
+
+
+        /* =========================
+           CONTACT INFORMATION
+        ========================== */
+
+        .contact-info {
+
+            padding: 35px;
+
+            border-radius: 24px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            backdrop-filter: blur(15px);
+
+            animation:
+                slideLeft 1s ease;
+        }
+
+        @keyframes slideLeft {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateX(-40px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateX(0);
+            }
+        }
+
+        .contact-info h2 {
+
+            font-size: 28px;
+
+            margin-bottom: 12px;
+        }
+
+        .contact-info > p {
+
+            color: #94a3b8;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           INFO ITEMS
+        ========================== */
+
+        .info-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding: 17px;
+
+            margin-bottom: 14px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255,255,255,0.035);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.06);
+
+            transition: 0.3s;
+        }
+
+        .info-item:hover {
+
+            transform:
+                translateX(7px);
+
+            border-color:
+                rgba(56,189,248,0.4);
+
+            background:
+                rgba(56,189,248,0.05);
+        }
+
+        .info-icon {
+
+            width: 45px;
+            height: 45px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            color: #38bdf8;
+
+            background:
+                rgba(56,189,248,0.1);
+
+            border:
+                1px solid
+                rgba(56,189,248,0.2);
+        }
+
+        .info-item small {
+
+            display: block;
+
+            color: #64748b;
+
+            font-size: 11px;
+
+            margin-bottom: 4px;
+        }
+
+        .info-item strong {
+
+            color: #e2e8f0;
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            word-break: break-word;
+        }
+
+
+        /* =========================
+           SOCIAL
+        ========================== */
+
+        .social-title {
+
+            color: #94a3b8;
+
+            font-size: 12px;
+
+            margin-top: 30px;
+
+            margin-bottom: 12px;
+        }
+
+        .socials {
+
+            display: flex;
+
+            gap: 10px;
+        }
+
+        .socials a {
+
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            color: #cbd5e1;
+
+            text-decoration: none;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.1);
+
+            background:
+                rgba(255,255,255,0.04);
+
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+
+            color: #020617;
+
+            background: #38bdf8;
+
+            transform:
+                translateY(-5px)
+                rotate(5deg);
+        }
+
+
+        /* =========================
+           CONTACT FORM
+        ========================== */
+
+        .contact-form {
+
+            padding: 35px;
+
+            border-radius: 24px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            backdrop-filter: blur(15px);
+
+            animation:
+                slideRight 1s ease;
+        }
+
+        @keyframes slideRight {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateX(40px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateX(0);
+            }
+        }
+
+        .contact-form h2 {
+
+            font-size: 28px;
+
+            margin-bottom: 8px;
+        }
+
+        .contact-form > p {
+
+            color: #94a3b8;
+
+            font-size: 13px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           FORM
+        ========================== */
+
+        .form-row {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+
+            display: block;
+
+            color: #cbd5e1;
+
+            font-size: 12px;
+
+            font-weight: 500;
+
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+
+            width: 100%;
+
+            padding: 14px 16px;
+
+            border-radius: 11px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.1);
+
+            outline: none;
+
+            color: white;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            background:
+                rgba(0,0,0,0.2);
+
+            transition: 0.3s;
+        }
+
+        .form-group textarea {
+
+            min-height: 150px;
+
+            resize: vertical;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group select option {
+
+            background: #0f172a;
+
+            color: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+
+            border-color: #38bdf8;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(56,189,248,0.08);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #475569;
+        }
+
+
+        /* =========================
+           SUBMIT BUTTON
+        ========================== */
+
+        .submit-btn {
+
+            width: 100%;
+
+            border: none;
+
+            padding: 15px;
+
+            border-radius: 12px;
+
+            color: #020617;
+
+            font-family: inherit;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #38bdf8,
+                    #818cf8
+                );
+
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(56,189,248,0.2);
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+
+        /* =========================
+           SUCCESS MESSAGE
+        ========================== */
+
+        .success-message {
+
+            display: none;
+
+            margin-top: 15px;
+
+            padding: 12px;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+            color: #86efac;
+
+            background:
+                rgba(34,197,94,0.08);
+
+            border:
+                1px solid
+                rgba(34,197,94,0.2);
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+
+            padding: 30px;
+
+            text-align: center;
+
+            color: #64748b;
+
+            background: #030712;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            nav {
+
+                height: auto;
+
+                padding: 18px;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .nav-links {
+
+                gap: 18px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .contact-section {
+
+                padding:
+                    130px 5%
+                    60px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 25px;
+            }
+
+            .contact-info h2,
+            .contact-form h2 {
+                font-size: 24px;
+            }
+
+
+            /* =========================
+               MOBILE MAIN HEADING
+            ========================== */
+
+            .heading h1 {
+
+                font-size: 45px;
+
+                letter-spacing: -1px;
+
+                margin-top: 14px;
+            }
+
+            .heading h1 span::after {
+
+                height: 3px;
+
+                bottom: -7px;
+            }
+
+            .heading small {
+
+                font-size: 11px;
+
+                letter-spacing: 3px;
+            }
+
+            .heading p {
+
+                font-size: 14px;
+
+                line-height: 1.7;
+            }
+
+
+            /* Smaller background on mobile */
+
+            .orb {
+                width: 220px;
+                height: 220px;
+
+                filter: blur(70px);
+            }
+
+            .particle {
+                width: 4px;
+                height: 4px;
+            }
+        }
+
+
+        /* =========================
+           REDUCED MOTION
+        ========================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration: 0.01ms !important;
+
+                animation-iteration-count: 1 !important;
+
+                scroll-behavior: auto !important;
+            }
+
+            .heading h1,
+            .heading p {
+
+                opacity: 1;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         ANIMATED BACKGROUND
+    ========================== -->
+
+    <div class="background">
+
+        <div class="orb orb-one"></div>
+
+        <div class="orb orb-two"></div>
+
+        <div class="particle particle-1"></div>
+        <div class="particle particle-2"></div>
+        <div class="particle particle-3"></div>
+        <div class="particle particle-4"></div>
+        <div class="particle particle-5"></div>
+        <div class="particle particle-6"></div>
+        <div class="particle particle-7"></div>
+        <div class="particle particle-8"></div>
+        <div class="particle particle-9"></div>
+        <div class="particle particle-10"></div>
+        <div class="particle particle-11"></div>
+        <div class="particle particle-12"></div>
+        <div class="particle particle-13"></div>
+        <div class="particle particle-14"></div>
+        <div class="particle particle-15"></div>
+        <div class="particle particle-16"></div>
+
+    </div>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <nav>
+
+            <a href="index.html" class="logo">
+                Prajwal<span>Naik</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="education.html">
+                        Education
+                    </a>
+                </li>
+
+                <li>
+                    <a href="skills.html">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html" class="active">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <main>
+
+        <section class="contact-section">
+
+
+            <!-- =========================
+                 ANIMATED HEADING
+            ========================== -->
+
+            <div class="heading">
+
+                <small>
+                    GET IN TOUCH
+                </small><br>
+
+                <h1>
+                    Let's <span>Connect</span>
+                </h1>
+
+                <p>
+                    Have a project idea, question, or opportunity?
+                    Send me a message and I'll get back to you as
+                    soon as possible.
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 CONTACT GRID
+            ========================== -->
+
+            <div class="contact-container">
+
+
+                <!-- =========================
+                     CONTACT INFORMATION
+                ========================== -->
+
+                <div class="contact-info">
+
+                    <h2>
+                        Contact Me
+                    </h2>
+
+                    <p>
+                        I'm always interested in hearing about new
+                        projects, creative ideas, and opportunities
+                        to work together.
+                    </p>
+
+
+                    <!-- Email -->
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            ✉
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Email
+                            </small>
+
+                            <strong>
+                                prajwalprajwalnaik113@gamil.com
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Phone -->
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            ☎
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Phone
+                            </small>
+
+                            <strong>
+                                +91 7411070260
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Location -->
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            📍
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Location
+                            </small>
+
+                            <strong>
+                                Munchadi House, Mogaru Village,
+                                Mangalore Taluk, Dakshina Kannada
+                                district, Karnataka, India
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Availability -->
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            ●
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Availability
+                            </small>
+
+                            <strong>
+                                Available for freelance work
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Social Links -->
+
+                    <p class="social-title">
+                        FOLLOW ME
+                    </p>
+
+                    <div class="socials">
+
+                        <a href="https://github.com/prajwalprajwalnaik113-cloud">
+                            Git
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/prajwal-naik-642bba43b/?isSelfProfile=true">
+                            In
+                        </a>
+
+                        <a href="https://www.instagram.com/mr_p_r_a_j_w_a_l___n_a_i_k?stkn=MXN5d2U5ZG1lMDVkNQ==">
+                            Ig
+                        </a>
+
+                        <a href="#">
+                            X
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     CONTACT FORM
+                ========================== -->
+
+                <div class="contact-form">
+
+                    <h2>
+                        Send a Message
+                    </h2>
+
+                    <p>
+                        Fill out the form below and I'll respond
+                        as soon as possible.
+                    </p>
+
+
+                    <form id="contactForm">
+
+
+                        <!-- Name + Email -->
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="name">
+                                    Your Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Enter your name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Enter your email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Subject -->
+
+                        <div class="form-group">
+
+                            <label for="subject">
+                                Subject
+                            </label>
+
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                placeholder="What is this about?"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Service -->
+
+                        <div class="form-group">
+
+                            <label for="service">
+                                Interested In
+                            </label>
+
+                            <select
+                                id="service"
+                                name="service"
+                            >
+
+                                <option value="">
+                                    Select an option
+                                </option>
+
+                                <option value="website">
+                                    Website Development
+                                </option>
+
+                                <option value="frontend">
+                                    Frontend Development
+                                </option>
+
+                                <option value="design">
+                                    UI/UX Design
+                                </option>
+
+                                <option value="freelance">
+                                    Freelance Project
+                                </option>
+
+                                <option value="other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Message -->
+
+                        <div class="form-group">
+
+                            <label for="message">
+                                Your Message
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Tell me about your project..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- Submit -->
+
+                        <button
+                            type="submit"
+                            class="submit-btn"
+                        >
+                            Send Message →
+                        </button>
+
+
+                        <div
+                            class="success-message"
+                            id="successMessage"
+                        >
+                            ✓ Message form submitted successfully!
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Your Name. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const form =
+            document.getElementById("contactForm");
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+
+        form.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+                successMessage.style.display =
+                    "block";
+
+                form.reset();
+
+                setTimeout(
+                    function() {
+
+                        successMessage.style.display =
+                            "none";
+
+                    },
+                    4000
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

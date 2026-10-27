@@ -1,0 +1,2185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Me | Prajwal Naik</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --blue: #38bdf8;
+            --purple: #a78bfa;
+            --pink: #ec4899;
+            --cyan: #22d3ee;
+            --dark: #0f172a;
+            --dark2: #111827;
+            --text: #ffffff;
+            --muted: #94a3b8;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: var(--dark);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* =========================================
+           CUSTOM SCROLLBAR
+        ========================================= */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(
+                var(--blue),
+                var(--purple)
+            );
+            border-radius: 20px;
+        }
+
+        /* =========================================
+           LOADING SCREEN
+        ========================================= */
+
+        
+        /* =========================================
+           CURSOR GLOW
+        ========================================= */
+
+        .cursor-glow {
+            position: fixed;
+
+            width: 250px;
+            height: 250px;
+
+            border-radius: 50%;
+
+            background: radial-gradient(
+                circle,
+                rgba(56,189,248,0.10),
+                transparent 70%
+            );
+
+            pointer-events: none;
+
+            transform: translate(-50%, -50%);
+
+            z-index: 0;
+        }
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        header {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background:
+                rgba(15,23,42,0.75);
+
+            backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.08);
+
+            transition: 0.4s;
+        }
+
+        header.scrolled {
+            background:
+                rgba(2,6,23,0.95);
+
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            max-width: 1200px;
+
+            height: 75px;
+
+            margin: auto;
+
+            padding: 0 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 27px;
+
+            font-weight: 800;
+
+            color: var(--blue);
+
+            text-decoration: none;
+
+            position: relative;
+        }
+
+        .logo span {
+            color: var(--purple);
+        }
+
+        .logo::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -5px;
+
+            width: 0;
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue),
+                    var(--pink)
+                );
+
+            transition: 0.4s;
+        }
+
+        .logo:hover::after {
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            color: #e2e8f0;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            font-weight: 500;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: -8px;
+
+            width: 0;
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue),
+                    var(--purple)
+                );
+
+            transform: translateX(-50%);
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: var(--blue);
+
+            text-shadow:
+                0 0 15px rgba(56,189,248,0.5);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links .active::after {
+            width: 100%;
+        }
+
+        /* =========================================
+           BACKGROUND
+        ========================================= */
+
+        .background {
+            position: fixed;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: -2;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(56,189,248,0.12),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 85% 75%,
+                    rgba(167,139,250,0.13),
+                    transparent 30%
+                ),
+
+                #0f172a;
+        }
+
+        .orb {
+            position: absolute;
+
+            border-radius: 50%;
+
+            filter: blur(2px);
+
+            opacity: 0.4;
+
+            animation:
+                floatOrb 10s ease-in-out infinite;
+        }
+
+        .orb.one {
+            width: 220px;
+            height: 220px;
+
+            background: var(--blue);
+
+            top: 15%;
+            left: -80px;
+        }
+
+        .orb.two {
+            width: 280px;
+            height: 280px;
+
+            background: var(--purple);
+
+            right: -100px;
+            top: 50%;
+
+            animation-delay: -3s;
+        }
+
+        .orb.three {
+            width: 150px;
+            height: 150px;
+
+            background: var(--pink);
+
+            left: 40%;
+            bottom: -60px;
+
+            animation-delay: -6s;
+        }
+
+        @keyframes floatOrb {
+
+            0%,100% {
+                transform: translate(0,0) scale(1);
+            }
+
+            50% {
+                transform:
+                    translate(50px,-50px)
+                    scale(1.15);
+            }
+        }
+
+        /* =========================================
+           PARTICLES
+        ========================================= */
+
+        .particles {
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+
+            width: 3px;
+            height: 3px;
+
+            background: var(--blue);
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 10px var(--blue);
+
+            animation:
+                particleMove linear infinite;
+        }
+
+        @keyframes particleMove {
+
+            from {
+                transform:
+                    translateY(100vh)
+                    scale(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            to {
+                transform:
+                    translateY(-10vh)
+                    scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .about-hero {
+            min-height: 100vh;
+
+            padding:
+                150px 8% 100px;
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .about-container {
+            max-width: 1200px;
+
+            width: 100%;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                0.8fr 1.2fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        /* =========================================
+           PROFILE CARD
+        ========================================= */
+
+        .profile-area {
+            display: flex;
+
+            justify-content: center;
+
+            perspective: 1000px;
+        }
+
+        .profile-card {
+            width: 340px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border-radius: 30px;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.09),
+                    rgba(255,255,255,0.025)
+                );
+
+            border:
+                1px solid rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.4);
+
+            transform-style: preserve-3d;
+
+            transition:
+                transform 0.15s ease,
+                box-shadow 0.4s;
+        }
+
+        .profile-card::before {
+            content: "";
+
+            position: absolute;
+
+            inset: -2px;
+
+            border-radius: 32px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--blue),
+                    var(--purple),
+                    var(--pink),
+                    var(--blue)
+                );
+
+            background-size: 300% 300%;
+
+            animation: borderFlow 5s linear infinite;
+
+            z-index: -1;
+        }
+
+        .profile-card::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 2px;
+
+            border-radius: 28px;
+
+            background: #111827;
+
+            z-index: -1;
+        }
+
+        @keyframes borderFlow {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .profile-card:hover {
+            box-shadow:
+                0 30px 90px
+                rgba(56,189,248,0.22);
+        }
+
+        .profile-image {
+            width: 205px;
+            height: 205px;
+
+            margin:
+                0 auto 25px;
+
+            padding: 6px;
+
+            border-radius: 50%;
+
+            position: relative;
+
+            background:
+                conic-gradient(
+                    var(--blue),
+                    var(--purple),
+                    var(--pink),
+                    var(--cyan),
+                    var(--blue)
+                );
+
+            animation:
+                rotateBorder 5s linear infinite;
+        }
+
+        @keyframes rotateBorder {
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 6px solid #111827;
+
+            animation:
+                counterRotate 5s linear infinite;
+        }
+
+        @keyframes counterRotate {
+
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        .profile-card h2 {
+            font-size: 27px;
+
+            margin-bottom: 7px;
+
+            transform: translateZ(35px);
+        }
+
+        .profile-card p {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            transform: translateZ(25px);
+        }
+
+        .status {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 18px;
+
+            padding: 8px 15px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(34,211,238,0.08);
+
+            border:
+                1px solid rgba(34,211,238,0.2);
+
+            color: #67e8f9;
+
+            font-size: 12px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #22c55e;
+
+            box-shadow:
+                0 0 12px #22c55e;
+
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+        }
+
+        /* =========================================
+           ABOUT CONTENT
+        ========================================= */
+
+        .about-content {
+            position: relative;
+        }
+
+        .small-title {
+            color: var(--blue);
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+
+            animation:
+                fadeUp 0.8s ease both;
+        }
+
+        .about-content h1 {
+            font-size:
+                clamp(40px,5vw,64px);
+
+            line-height: 1.1;
+
+            margin-bottom: 25px;
+
+            animation:
+                fadeUp 1s 0.15s ease both;
+        }
+
+        .about-content h1 span {
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue),
+                    var(--purple),
+                    var(--pink),
+                    var(--blue)
+                );
+
+            background-size: 300%;
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            animation:
+                gradientText 5s linear infinite;
+        }
+
+        @keyframes gradientText {
+
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 300%;
+            }
+        }
+
+        .about-content > p {
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.9;
+
+            margin-bottom: 17px;
+
+            animation:
+                fadeUp 1s 0.3s ease both;
+        }
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================================
+           INFO GRID
+        ========================================= */
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap: 15px;
+
+            margin-top: 30px;
+        }
+
+        .info-box {
+            position: relative;
+
+            padding: 20px;
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid rgba(255,255,255,0.09);
+
+            transition:
+                0.4s;
+
+            opacity: 0;
+
+            transform:
+                translateY(25px);
+
+            animation:
+                revealBox 0.7s forwards;
+        }
+
+        .info-box:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .info-box:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .info-box:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .info-box:nth-child(4) {
+            animation-delay: 0.5s;
+        }
+
+        .info-box:nth-child(5) {
+            animation-delay: 0.6s;
+        }
+
+        .info-box:nth-child(6) {
+            animation-delay: 0.7s;
+        }
+
+        @keyframes revealBox {
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-box::before {
+            content: "";
+
+            position: absolute;
+
+            width: 80px;
+            height: 80px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(56,189,248,0.12);
+
+            top: -40px;
+            right: -40px;
+
+            transition: 0.4s;
+        }
+
+        .info-box:hover {
+            transform:
+                translateY(-8px)
+                scale(1.02);
+
+            border-color:
+                rgba(56,189,248,0.5);
+
+            background:
+                rgba(56,189,248,0.07);
+
+            box-shadow:
+                0 15px 40px
+                rgba(56,189,248,0.10);
+        }
+
+        .info-box:hover::before {
+            transform: scale(2);
+        }
+
+        .info-box h3 {
+            color: var(--blue);
+
+            font-size: 13px;
+
+            margin-bottom: 7px;
+
+            letter-spacing: 1px;
+        }
+
+        .info-box p {
+            color: #e2e8f0;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            margin: 0;
+        }
+
+        /* =========================================
+           STATS
+        ========================================= */
+
+        .stats-section {
+            padding:
+                80px 8%;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #0f172a,
+                    #0b1120
+                );
+        }
+
+        .stats {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap: 20px;
+        }
+
+        .stat-box {
+            padding: 35px 20px;
+
+            text-align: center;
+
+            border-radius: 22px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            transition:
+                0.4s;
+
+            opacity: 0;
+
+            transform: translateY(30px);
+        }
+
+        .stat-box.show {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+        .stat-box::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: -100%;
+
+            width: 100%;
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--blue),
+                    var(--purple),
+                    transparent
+                );
+
+            animation:
+                statLine 3s linear infinite;
+        }
+
+        @keyframes statLine {
+
+            to {
+                left: 100%;
+            }
+        }
+
+        .stat-box:hover {
+            transform:
+                translateY(-10px)
+                scale(1.03);
+
+            border-color:
+                rgba(56,189,248,0.5);
+
+            box-shadow:
+                0 20px 50px
+                rgba(56,189,248,0.12);
+        }
+
+        .stat-box h2 {
+            font-size: 45px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--blue),
+                    var(--purple)
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            margin-bottom: 7px;
+        }
+
+        .stat-box p {
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+        /* =========================================
+           JOURNEY
+        ========================================= */
+
+        .journey {
+            padding:
+                110px 8%;
+
+            background: #111c31;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 75px;
+        }
+
+        .section-title small {
+            color: var(--blue);
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-size:
+                clamp(32px,5vw,45px);
+
+            margin-top: 10px;
+        }
+
+        .section-title h2 span {
+            color: var(--blue);
+        }
+
+        /* =========================================
+           TIMELINE
+        ========================================= */
+
+        .timeline {
+            max-width: 950px;
+
+            margin: auto;
+
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 0;
+
+            width: 3px;
+
+            height: 100%;
+
+            transform:
+                translateX(-50%);
+
+            background:
+                linear-gradient(
+                    var(--blue),
+                    var(--purple),
+                    var(--pink)
+                );
+
+            box-shadow:
+                0 0 15px
+                rgba(56,189,248,0.4);
+        }
+
+        .timeline-item {
+            width: 50%;
+
+            padding:
+                20px 40px;
+
+            position: relative;
+
+            opacity: 0;
+
+            transform: translateY(40px);
+
+            transition:
+                0.8s ease;
+        }
+
+        .timeline-item.show {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            top: 30px;
+
+            width: 17px;
+            height: 17px;
+
+            border-radius: 50%;
+
+            background: var(--blue);
+
+            border:
+                3px solid #111c31;
+
+            box-shadow:
+                0 0 0 4px
+                rgba(56,189,248,0.2),
+                0 0 25px
+                var(--blue);
+
+            z-index: 2;
+
+            animation:
+                dotPulse 2s infinite;
+        }
+
+        @keyframes dotPulse {
+
+            50% {
+                box-shadow:
+                    0 0 0 10px
+                    rgba(56,189,248,0.03),
+                    0 0 35px
+                    var(--blue);
+            }
+        }
+
+        .timeline-item:nth-child(odd)
+        .timeline-dot {
+            right: -8px;
+        }
+
+        .timeline-item:nth-child(even)
+        .timeline-dot {
+            left: -8px;
+        }
+
+        .timeline-content {
+            padding: 28px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            transition:
+                0.4s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .timeline-content::before {
+            content: "";
+
+            position: absolute;
+
+            width: 100%;
+            height: 2px;
+
+            top: 0;
+            left: -100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--blue),
+                    var(--purple),
+                    transparent
+                );
+
+            transition: 0.5s;
+        }
+
+        .timeline-content:hover::before {
+            left: 100%;
+        }
+
+        .timeline-content:hover {
+            transform:
+                translateY(-8px)
+                scale(1.02);
+
+            border-color:
+                rgba(56,189,248,0.45);
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.25);
+        }
+
+        .timeline-content span {
+            color: var(--blue);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+        }
+
+        .timeline-content h3 {
+            font-size: 20px;
+
+            margin:
+                8px 0 10px;
+        }
+
+        .timeline-content p {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+        .timeline-content strong {
+            color: #e2e8f0;
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            text-align: center;
+
+            padding: 35px;
+
+            background: #020617;
+
+            color: #64748b;
+
+            font-size: 14px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.06);
+        }
+
+        footer span {
+            color: var(--blue);
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                height: auto;
+
+                padding: 18px;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 18px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+
+                gap: 55px;
+
+                text-align: center;
+            }
+
+            .about-content > p {
+                max-width: 750px;
+
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .info-grid {
+                text-align: left;
+            }
+
+            .stats {
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item {
+                width: 100%;
+
+                margin-left: 0 !important;
+
+                padding-left: 40px;
+
+                padding-right: 0;
+
+                margin-bottom: 15px;
+            }
+
+            .timeline-item:nth-child(odd)
+            .timeline-dot,
+            .timeline-item:nth-child(even)
+            .timeline-dot {
+                left: 2px;
+
+                right: auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 10px;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .about-hero {
+                padding:
+                    150px 5% 70px;
+            }
+
+            .profile-card {
+                width: 285px;
+
+                padding: 25px;
+            }
+
+            .profile-image {
+                width: 175px;
+                height: 175px;
+            }
+
+            .about-content h1 {
+                font-size: 38px;
+            }
+
+            .about-content > p {
+                font-size: 14px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-section {
+                padding:
+                    60px 5%;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .journey {
+                padding:
+                    75px 5%;
+            }
+
+            .section-title {
+                margin-bottom: 45px;
+            }
+
+            .timeline-content {
+                padding: 21px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         LOADER
+    ========================================= -->
+
+    <div id="loader">
+
+        <div class="loader-content">
+
+            <div class="loader-ring"></div>
+
+            <h2>WELCOME TO MY PORTFOLIO</h2>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         CURSOR GLOW
+    ========================================= -->
+
+    <div class="cursor-glow"></div>
+
+
+    <!-- =========================================
+         BACKGROUND
+    ========================================= -->
+
+    <div class="background">
+
+        <div class="orb one"></div>
+        <div class="orb two"></div>
+        <div class="orb three"></div>
+
+    </div>
+
+
+    <!-- PARTICLES -->
+
+    <div class="particles" id="particles"></div>
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================= -->
+
+    <header id="header">
+
+        <nav>
+
+            <a href="index.html" class="logo">
+                Prajwal<space><span>Naik</span></space>
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html" class="active">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="education.html">
+                        Education
+                    </a>
+                </li>
+
+                <li>
+                    <a href="skills.html">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN
+    ========================================= -->
+
+    <main>
+
+
+        <!-- =====================================
+             ABOUT HERO
+        ====================================== -->
+
+        <section class="about-hero">
+
+            <div class="about-container">
+
+
+                <!-- PROFILE -->
+
+                <div class="profile-area">
+
+                    <div class="profile-card" id="profileCard">
+
+                        <div class="profile-image">
+
+                            <!--
+                                Replace this with your image.
+
+                                Example:
+                                images/profile.jpg
+                            -->
+
+                            <img
+                                src="C:\Users\User\Desktop\pgcet\WhatsApp Image 2026-10-04 at 10.10.52 AM.jpeg"
+                                alt="Prajwal Naik">
+
+                        </div>
+
+                        <h2>
+                            Prajwal Naik
+                        </h2>
+
+                        <p>
+                            Web Developer & Designer
+                        </p>
+
+                        <div class="status">
+
+                            <span class="status-dot"></span>
+
+                            Available for opportunities
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ABOUT CONTENT -->
+
+                <div class="about-content">
+
+                    <div class="small-title">
+                        ABOUT ME
+                    </div>
+
+                    <h1>
+                        Turning Ideas Into
+                        <span>Digital Experiences</span>
+                    </h1>
+
+                    <p>
+                        Hello! I'm Prajwal Naik, a passionate web developer
+                        who enjoys creating modern, responsive and
+                        user-friendly websites.
+                    </p>
+
+                    <p>
+                        I am currently pursuing my Master of Computer
+                        Applications (MCA) at Sahyadri College of Engineering
+                        & Management, Mangalore. I completed my Bachelor of
+                        Computer Applications (BCA) from Canara Autonomous
+                        College, Mangalore.
+                    </p>
+
+                    <p>
+                        I enjoy solving problems through technology and
+                        continuously learning new tools and frameworks.
+                        My goal is to create websites that are visually
+                        attractive, fast, accessible and easy to use.
+                    </p>
+
+
+                    <!-- INFORMATION -->
+
+                    <div class="info-grid">
+
+
+                        <div class="info-box">
+
+                            <h3>
+                                NAME
+                            </h3>
+
+                            <p>
+                                Prajwal Naik
+                            </p>
+
+                        </div>
+
+
+                        <div class="info-box">
+
+                            <h3>
+                                LOCATION
+                            </h3>
+
+                            <p>
+                                Mangalore, Karnataka
+                            </p>
+
+                        </div>
+
+
+                        <div class="info-box">
+
+                            <h3>
+                                EMAIL
+                            </h3>
+
+                            <p>
+                                prajwalprajwalnaik113@gmail.com
+                            </p>
+
+                        </div>
+
+
+                        <div class="info-box">
+
+                            <h3>
+                                PROFESSION
+                            </h3>
+
+                            <p>
+                                Web Developer
+                            </p>
+
+                        </div>
+
+
+                        <div class="info-box">
+
+                            <h3>
+                                BACHELOR'S DEGREE
+                            </h3>
+
+                            <p>
+                                BCA - Canara Autonomous College,
+                                Mangalore
+                            </p>
+
+                        </div>
+
+
+                        <div class="info-box">
+
+                            <h3>
+                                CURRENT EDUCATION
+                            </h3>
+
+                            <p>
+                                MCA - Sahyadri College of Engineering
+                                & Management, Mangalore
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             STATISTICS
+        ====================================== -->
+
+        <section class="stats-section">
+
+            <div class="stats">
+
+
+                <div class="stat-box reveal-stat">
+
+                    <h2>
+                        <span class="counter"
+                              data-target="3">
+                            0
+                        </span>+
+                    </h2>
+
+                    <p>
+                        Projects Completed
+                    </p>
+
+                </div>
+
+
+                <div class="stat-box reveal-stat">
+
+                    <h2>
+                        <span class="counter"
+                              data-target="2">
+                            0
+                        </span>+
+                    </h2>
+
+                    <p>
+                        Years Learning
+                    </p>
+
+                </div>
+
+
+                <div class="stat-box reveal-stat">
+
+                    <h2>
+                        <span class="counter"
+                              data-target="15">
+                            0
+                        </span>+
+                    </h2>
+
+                    <p>
+                        Technologies
+                    </p>
+
+                </div>
+
+
+                <div class="stat-box reveal-stat">
+
+                    <h2>
+                        <span class="counter"
+                              data-target="100">
+                            0
+                        </span>%
+                    </h2>
+
+                    <p>
+                        Passion
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             JOURNEY
+        ====================================== -->
+
+        
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <p>
+            © 2026 <span>Prajwal Naik</span>.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+        /* =====================================
+           PAGE LOADER
+        ===================================== */
+
+        window.addEventListener("load", function () {
+
+            setTimeout(function () {
+
+                const loader =
+                    document.getElementById("loader");
+
+                loader.style.opacity = "0";
+
+                setTimeout(function () {
+
+                    loader.style.display = "none";
+
+                }, 800);
+
+            }, 700);
+
+        });
+
+
+        /* =====================================
+           CREATE PARTICLES
+        ===================================== */
+
+        const particleContainer =
+            document.getElementById("particles");
+
+        for (let i = 0; i < 60; i++) {
+
+            const particle =
+                document.createElement("span");
+
+            particle.classList.add("particle");
+
+            particle.style.left =
+                Math.random() * 100 + "%";
+
+            particle.style.animationDuration =
+                (5 + Math.random() * 10) + "s";
+
+            particle.style.animationDelay =
+                Math.random() * 10 + "s";
+
+            particle.style.opacity =
+                Math.random();
+
+            particleContainer.appendChild(
+                particle
+            );
+
+        }
+
+
+        /* =====================================
+           CURSOR GLOW
+        ===================================== */
+
+        const cursorGlow =
+            document.querySelector(".cursor-glow");
+
+        document.addEventListener(
+            "mousemove",
+            function (event) {
+
+                cursorGlow.style.left =
+                    event.clientX + "px";
+
+                cursorGlow.style.top =
+                    event.clientY + "px";
+
+            }
+        );
+
+
+        /* =====================================
+           PROFILE 3D TILT
+        ===================================== */
+
+        const profileCard =
+            document.getElementById("profileCard");
+
+        profileCard.addEventListener(
+            "mousemove",
+            function (event) {
+
+                const rect =
+                    profileCard.getBoundingClientRect();
+
+                const x =
+                    event.clientX - rect.left;
+
+                const y =
+                    event.clientY - rect.top;
+
+                const centerX =
+                    rect.width / 2;
+
+                const centerY =
+                    rect.height / 2;
+
+                const rotateX =
+                    ((y - centerY) / centerY) * -8;
+
+                const rotateY =
+                    ((x - centerX) / centerX) * 8;
+
+                profileCard.style.transform =
+                    `rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)
+                     translateY(-8px)`;
+
+            }
+        );
+
+        profileCard.addEventListener(
+            "mouseleave",
+            function () {
+
+                profileCard.style.transform =
+                    "rotateX(0) rotateY(0)";
+
+            }
+        );
+
+
+        /* =====================================
+           HEADER SCROLL EFFECT
+        ===================================== */
+
+        const header =
+            document.getElementById("header");
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (window.scrollY > 50) {
+
+                    header.classList.add("scrolled");
+
+                } else {
+
+                    header.classList.remove("scrolled");
+
+                }
+
+            }
+        );
+
+
+        /* =====================================
+           SCROLL REVEAL
+        ===================================== */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".timeline-item, .reveal-stat"
+            );
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "show"
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.2
+                }
+            );
+
+        revealElements.forEach(
+            function (element) {
+
+                observer.observe(element);
+
+            }
+        );
+
+
+        /* =====================================
+           ANIMATED COUNTERS
+        ===================================== */
+
+        const counters =
+            document.querySelectorAll(
+                ".counter"
+            );
+
+        let countersStarted = false;
+
+        function startCounters() {
+
+            if (countersStarted) return;
+
+            countersStarted = true;
+
+            counters.forEach(
+                function (counter) {
+
+                    const target =
+                        Number(
+                            counter.dataset.target
+                        );
+
+                    let current = 0;
+
+                    const increment =
+                        Math.max(
+                            1,
+                            Math.ceil(
+                                target / 50
+                            )
+                        );
+
+                    const timer =
+                        setInterval(
+                            function () {
+
+                                current += increment;
+
+                                if (
+                                    current >= target
+                                ) {
+
+                                    current = target;
+
+                                    clearInterval(
+                                        timer
+                                    );
+
+                                }
+
+                                counter.textContent =
+                                    current;
+
+                            },
+                            30
+                        );
+
+                }
+            );
+
+        }
+
+
+        const statsSection =
+            document.querySelector(
+                ".stats-section"
+            );
+
+        const counterObserver =
+            new IntersectionObserver(
+                function (entries) {
+
+                    if (
+                        entries[0].isIntersecting
+                    ) {
+
+                        startCounters();
+
+                    }
+
+                },
+                {
+                    threshold: 0.4
+                }
+            );
+
+        counterObserver.observe(
+            statsSection
+        );
+
+
+        /* =====================================
+           MAGNETIC INFO BOX EFFECT
+        ===================================== */
+
+        const infoBoxes =
+            document.querySelectorAll(
+                ".info-box"
+            );
+
+        infoBoxes.forEach(
+            function (box) {
+
+                box.addEventListener(
+                    "mousemove",
+                    function (event) {
+
+                        const rect =
+                            box.getBoundingClientRect();
+
+                        const x =
+                            event.clientX -
+                            rect.left;
+
+                        const y =
+                            event.clientY -
+                            rect.top;
+
+                        const rotateY =
+                            ((x -
+                                rect.width / 2) /
+                                rect.width) * 5;
+
+                        const rotateX =
+                            ((y -
+                                rect.height / 2) /
+                                rect.height) * -5;
+
+                        box.style.transform =
+                            `perspective(500px)
+                             rotateX(${rotateX}deg)
+                             rotateY(${rotateY}deg)
+                             translateY(-8px)
+                             scale(1.02)`;
+
+                    }
+                );
+
+                box.addEventListener(
+                    "mouseleave",
+                    function () {
+
+                        box.style.transform =
+                            "";
+
+                    }
+                );
+
+            }
+        );
+
+
+    </script>
+
+</body>
+
+</html>

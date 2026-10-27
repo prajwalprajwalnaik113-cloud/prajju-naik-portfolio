@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Projects | My Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+
+        /* =========================================
+           BODY
+        ========================================= */
+
+        body {
+            font-family: "Poppins", sans-serif;
+
+            background: #020617;
+
+            color: white;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================================
+           ANIMATED BACKGROUND
+        ========================================= */
+
+        .animated-background {
+
+            position: fixed;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            background:
+
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(34, 211, 238, 0.12),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(168, 85, 247, 0.14),
+                    transparent 30%
+                ),
+
+                #020617;
+        }
+
+
+        /* =========================================
+           MOVING GLOWING DOTS
+        ========================================= */
+
+        .dot {
+
+            position: absolute;
+
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background: #22d3ee;
+
+            box-shadow:
+                0 0 8px #22d3ee,
+                0 0 18px #22d3ee,
+                0 0 30px rgba(34, 211, 238, 0.5);
+
+            opacity: 0.8;
+
+            animation:
+                moveDot 12s linear infinite;
+        }
+
+
+        .dot:nth-child(1) {
+            left: 5%;
+            top: 90%;
+            animation-duration: 10s;
+        }
+
+        .dot:nth-child(2) {
+            left: 15%;
+            top: 70%;
+            animation-duration: 14s;
+            animation-delay: 1s;
+        }
+
+        .dot:nth-child(3) {
+            left: 25%;
+            top: 95%;
+            animation-duration: 11s;
+            animation-delay: 2s;
+        }
+
+        .dot:nth-child(4) {
+            left: 35%;
+            top: 80%;
+            animation-duration: 16s;
+            animation-delay: 3s;
+        }
+
+        .dot:nth-child(5) {
+            left: 45%;
+            top: 100%;
+            animation-duration: 13s;
+            animation-delay: 1s;
+        }
+
+        .dot:nth-child(6) {
+            left: 55%;
+            top: 75%;
+            animation-duration: 15s;
+            animation-delay: 4s;
+        }
+
+        .dot:nth-child(7) {
+            left: 65%;
+            top: 90%;
+            animation-duration: 12s;
+            animation-delay: 2s;
+        }
+
+        .dot:nth-child(8) {
+            left: 75%;
+            top: 65%;
+            animation-duration: 17s;
+            animation-delay: 5s;
+        }
+
+        .dot:nth-child(9) {
+            left: 85%;
+            top: 95%;
+            animation-duration: 11s;
+            animation-delay: 3s;
+        }
+
+        .dot:nth-child(10) {
+            left: 95%;
+            top: 80%;
+            animation-duration: 14s;
+            animation-delay: 1s;
+        }
+
+        .dot:nth-child(11) {
+            left: 10%;
+            top: 50%;
+            animation-duration: 18s;
+            animation-delay: 4s;
+        }
+
+        .dot:nth-child(12) {
+            left: 30%;
+            top: 60%;
+            animation-duration: 13s;
+            animation-delay: 2s;
+        }
+
+        .dot:nth-child(13) {
+            left: 50%;
+            top: 40%;
+            animation-duration: 16s;
+            animation-delay: 5s;
+        }
+
+        .dot:nth-child(14) {
+            left: 70%;
+            top: 55%;
+            animation-duration: 12s;
+            animation-delay: 3s;
+        }
+
+        .dot:nth-child(15) {
+            left: 90%;
+            top: 45%;
+            animation-duration: 15s;
+            animation-delay: 6s;
+        }
+
+
+        /* Purple dots */
+
+        .dot:nth-child(3n) {
+
+            background: #a855f7;
+
+            box-shadow:
+                0 0 8px #a855f7,
+                0 0 18px #a855f7,
+                0 0 30px rgba(168, 85, 247, 0.5);
+        }
+
+
+        /* Pink dots */
+
+        .dot:nth-child(5n) {
+
+            background: #ec4899;
+
+            box-shadow:
+                0 0 8px #ec4899,
+                0 0 18px #ec4899,
+                0 0 30px rgba(236, 72, 153, 0.5);
+        }
+
+
+        @keyframes moveDot {
+
+            0% {
+
+                transform:
+                    translate3d(0, 120px, 0)
+                    scale(0.5);
+
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            50% {
+
+                transform:
+                    translate3d(70px, -250px, 0)
+                    scale(1.3);
+
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 0.6;
+            }
+
+            100% {
+
+                transform:
+                    translate3d(-80px, -700px, 0)
+                    scale(0.4);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        header {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background:
+                rgba(2, 6, 23, 0.88);
+
+            backdrop-filter:
+                blur(18px);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            box-shadow:
+                0 10px 35px
+                rgba(0,0,0,0.3);
+        }
+
+
+        nav {
+
+            max-width: 1200px;
+
+            height: 75px;
+
+            margin: auto;
+
+            padding: 0 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        /* =========================================
+           LOGO
+        ========================================= */
+
+        .logo {
+
+            font-size: 27px;
+
+            font-weight: 800;
+
+            color: #22d3ee;
+
+            text-decoration: none;
+
+            letter-spacing: 1px;
+
+            text-shadow:
+                0 0 10px
+                rgba(34,211,238,0.5);
+
+            animation:
+                logoGlow 3s ease-in-out infinite alternate;
+        }
+
+
+        .logo span {
+            color: #a855f7;
+        }
+
+
+        @keyframes logoGlow {
+
+            from {
+                filter:
+                    drop-shadow(
+                        0 0 2px #22d3ee
+                    );
+            }
+
+            to {
+                filter:
+                    drop-shadow(
+                        0 0 12px #22d3ee
+                    );
+            }
+        }
+
+
+        /* =========================================
+           NAV LINKS
+        ========================================= */
+
+        .nav-links {
+
+            display: flex;
+
+            list-style: none;
+
+            gap: 30px;
+        }
+
+
+        .nav-links a {
+
+            position: relative;
+
+            color: #cbd5e1;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            font-weight: 500;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+
+            color: #22d3ee;
+
+            text-shadow:
+                0 0 10px #22d3ee;
+        }
+
+
+        .nav-links a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: -8px;
+
+            width: 0;
+
+            height: 2px;
+
+            transform:
+                translateX(-50%);
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #22d3ee,
+                    #a855f7,
+                    #ec4899
+                );
+
+            box-shadow:
+                0 0 10px #22d3ee;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+
+            width: 100%;
+        }
+
+
+        .nav-links a.active {
+
+            color: #22d3ee;
+
+            text-shadow:
+                0 0 10px
+                rgba(34,211,238,0.6);
+        }
+
+
+        /* =========================================
+           PROJECT SECTION
+        ========================================= */
+
+        .projects-section {
+
+            min-height: 100vh;
+
+            padding:
+                150px 8% 100px;
+
+            position: relative;
+        }
+
+
+        /* =========================================
+           MAIN HEADING
+        ========================================= */
+
+        .section-heading {
+
+            max-width: 850px;
+
+            margin:
+                0 auto 70px;
+
+            text-align: center;
+
+            position: relative;
+
+            animation:
+                headingReveal 1.2s ease-out forwards;
+        }
+
+
+        /* Small heading */
+
+        .section-heading small {
+
+            display: inline-block;
+
+            color: #22d3ee;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+
+            text-shadow:
+                0 0 8px #22d3ee,
+                0 0 20px rgba(34,211,238,0.6);
+
+            animation:
+                smallGlow 2s ease-in-out infinite alternate;
+        }
+
+
+        /* MAIN TITLE */
+
+        .section-heading h1 {
+
+            font-size:
+                clamp(48px, 7vw, 75px);
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            line-height: 1.1;
+
+            margin:
+                10px 0 25px;
+
+            color: #f8fafc;
+
+            animation:
+                mainHeadingFloat 4s ease-in-out infinite;
+        }
+
+
+        /* Animated Projects text */
+
+        .section-heading h1 span {
+
+            display: inline-block;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #22d3ee,
+                    #3b82f6,
+                    #8b5cf6,
+                    #ec4899,
+                    #22d3ee
+                );
+
+            background-size:
+                400% 400%;
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            animation:
+                gradientMove 5s ease infinite,
+                textGlow 2.5s ease-in-out infinite alternate;
+
+            position: relative;
+        }
+
+
+        /* Animated underline */
+
+        .section-heading h1 span::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -10px;
+
+            width: 100%;
+
+            height: 3px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #22d3ee,
+                    #8b5cf6,
+                    #ec4899
+                );
+
+            background-size:
+                200% 100%;
+
+            box-shadow:
+                0 0 10px #22d3ee,
+                0 0 20px #8b5cf6;
+
+            animation:
+                lineMove 3s linear infinite;
+        }
+
+
+        /* Description */
+
+        .section-heading p {
+
+            color: #a5b4fc;
+
+            max-width: 700px;
+
+            margin: auto;
+
+            font-size: 16px;
+
+            line-height: 1.9;
+
+            animation:
+                paragraphReveal 1.5s ease
+                0.4s both;
+        }
+
+
+        /* =========================================
+           HEADING ANIMATIONS
+        ========================================= */
+
+        @keyframes headingReveal {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translateY(70px)
+                    scale(0.85);
+
+                filter:
+                    blur(10px);
+            }
+
+            60% {
+                opacity: 1;
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+
+                filter:
+                    blur(0);
+            }
+        }
+
+
+        @keyframes mainHeadingFloat {
+
+            0%, 100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-7px);
+            }
+        }
+
+
+        @keyframes gradientMove {
+
+            0% {
+                background-position:
+                    0% 50%;
+            }
+
+            50% {
+                background-position:
+                    100% 50%;
+            }
+
+            100% {
+                background-position:
+                    0% 50%;
+            }
+        }
+
+
+        @keyframes textGlow {
+
+            0% {
+
+                filter:
+                    drop-shadow(
+                        0 0 5px
+                        rgba(34,211,238,0.3)
+                    );
+            }
+
+            50% {
+
+                filter:
+                    drop-shadow(
+                        0 0 15px
+                        rgba(34,211,238,0.8)
+                    );
+            }
+
+            100% {
+
+                filter:
+                    drop-shadow(
+                        0 0 25px
+                        rgba(236,72,153,0.7)
+                    );
+            }
+        }
+
+
+        @keyframes smallGlow {
+
+            from {
+
+                opacity: 0.7;
+
+                text-shadow:
+                    0 0 5px #22d3ee;
+            }
+
+            to {
+
+                opacity: 1;
+
+                text-shadow:
+                    0 0 10px #22d3ee,
+                    0 0 25px #3b82f6,
+                    0 0 40px #8b5cf6;
+            }
+        }
+
+
+        @keyframes lineMove {
+
+            0% {
+                background-position:
+                    0% 50%;
+            }
+
+            100% {
+                background-position:
+                    200% 50%;
+            }
+        }
+
+
+        @keyframes paragraphReveal {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(30px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =========================================
+           PROJECT CONTAINER
+        ========================================= */
+
+        .projects-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 30px;
+        }
+
+
+        /* =========================================
+           PROJECT CARD
+        ========================================= */
+
+        .project-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.08),
+                    rgba(255,255,255,0.025)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            backdrop-filter:
+                blur(15px);
+
+            transition:
+                0.5s ease;
+
+            opacity: 0;
+
+            animation:
+                cardReveal 0.9s ease forwards;
+        }
+
+
+        .project-card:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+
+        .project-card:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+
+        .project-card:hover {
+
+            transform:
+                translateY(-12px)
+                scale(1.02);
+
+            border-color:
+                rgba(34,211,238,0.6);
+
+            box-shadow:
+
+                0 25px 60px
+                rgba(0,0,0,0.4),
+
+                0 0 35px
+                rgba(34,211,238,0.15);
+        }
+
+
+        /* =========================================
+           CARD IMAGE
+        ========================================= */
+
+        .project-image {
+
+            height: 240px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .rainfall-image {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #075985,
+                    #1e3a8a,
+                    #312e81
+                );
+
+            background-size: 200% 200%;
+
+            animation:
+                imageGradient 6s ease infinite;
+        }
+
+
+        .shopping-image {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7c2d12,
+                    #be123c,
+                    #7e22ce
+                );
+
+            background-size: 200% 200%;
+
+            animation:
+                imageGradient 6s ease infinite;
+        }
+
+
+        @keyframes imageGradient {
+
+            0% {
+                background-position:
+                    0% 50%;
+            }
+
+            50% {
+                background-position:
+                    100% 50%;
+            }
+
+            100% {
+                background-position:
+                    0% 50%;
+            }
+        }
+
+
+        /* =========================================
+           PROJECT ICON
+        ========================================= */
+
+        .project-icon {
+
+            font-size: 90px;
+
+            filter:
+                drop-shadow(
+                    0 0 15px
+                    rgba(255,255,255,0.4)
+                );
+
+            transition:
+                0.5s ease;
+
+            animation:
+                iconFloat 3s ease-in-out infinite;
+        }
+
+
+        .project-card:hover
+        .project-icon {
+
+            transform:
+                scale(1.2)
+                rotate(5deg);
+
+            filter:
+                drop-shadow(
+                    0 0 25px
+                    rgba(34,211,238,0.8)
+                );
+        }
+
+
+        @keyframes iconFloat {
+
+            0%, 100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-10px);
+            }
+        }
+
+
+        /* =========================================
+           PROJECT NUMBER
+        ========================================= */
+
+        .project-number {
+
+            position: absolute;
+
+            top: 15px;
+
+            right: 15px;
+
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(0,0,0,0.4);
+
+            backdrop-filter:
+                blur(8px);
+
+            color: #22d3ee;
+
+            border:
+                1px solid
+                rgba(34,211,238,0.4);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            z-index: 2;
+
+            box-shadow:
+                0 0 15px
+                rgba(34,211,238,0.2);
+        }
+
+
+        /* =========================================
+           PROJECT CONTENT
+        ========================================= */
+
+        .project-content {
+
+            padding: 30px;
+        }
+
+
+        .project-category {
+
+            display: inline-block;
+
+            color: #22d3ee;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .project-content h2 {
+
+            font-size: 25px;
+
+            color: #f8fafc;
+
+            margin-bottom: 15px;
+
+            transition: 0.3s;
+        }
+
+
+        .project-card:hover
+        .project-content h2 {
+
+            color: #67e8f9;
+
+            text-shadow:
+                0 0 10px
+                rgba(34,211,238,0.3);
+        }
+
+
+        .project-content p {
+
+            color: #94a3b8;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================================
+           TECHNOLOGIES
+        ========================================= */
+
+        .tech-list {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .tech-list span {
+
+            padding:
+                6px 12px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(30,41,59,0.9);
+
+            color:
+                #cbd5e1;
+
+            font-size: 11px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            transition:
+                0.3s;
+        }
+
+
+        .tech-list span:hover {
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #0891b2,
+                    #7c3aed
+                );
+
+            border-color:
+                #22d3ee;
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .project-buttons {
+
+            display: flex;
+
+            gap: 10px;
+        }
+
+
+        .project-btn {
+
+            flex: 1;
+
+            padding:
+                11px 15px;
+
+            border-radius: 9px;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition:
+                0.3s ease;
+        }
+
+
+        .demo-btn {
+
+            color: #020617;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #22d3ee,
+                    #3b82f6
+                );
+
+            box-shadow:
+                0 0 15px
+                rgba(34,211,238,0.2);
+        }
+
+
+        .demo-btn:hover {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #67e8f9,
+                    #a78bfa
+                );
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 0 25px
+                rgba(34,211,238,0.5);
+        }
+
+
+        .github-btn {
+
+            color: white;
+
+            border:
+                1px solid #475569;
+        }
+
+
+        .github-btn:hover {
+
+            color: #22d3ee;
+
+            border-color:
+                #22d3ee;
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 0 15px
+                rgba(34,211,238,0.2);
+        }
+
+
+        /* =========================================
+           CARD ANIMATION
+        ========================================= */
+
+        @keyframes cardReveal {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(60px)
+                    scale(0.9);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            padding: 30px;
+
+            text-align: center;
+
+            background:
+                #01040d;
+
+            color:
+                #64748b;
+
+            font-size: 14px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.06);
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 850px) {
+
+            .projects-container {
+
+                grid-template-columns:
+                    1fr;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            nav {
+
+                height: auto;
+
+                padding:
+                    18px;
+
+                flex-direction:
+                    column;
+
+                gap: 15px;
+            }
+
+
+            .nav-links {
+
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content:
+                    center;
+            }
+
+
+            .nav-links a {
+
+                font-size: 13px;
+            }
+
+
+            .projects-section {
+
+                padding:
+                    130px 5% 70px;
+            }
+
+
+            .section-heading h1 {
+
+                font-size: 48px;
+            }
+
+
+            .section-heading small {
+
+                font-size: 11px;
+
+                letter-spacing: 3px;
+            }
+
+
+            .section-heading p {
+
+                font-size: 14px;
+            }
+        }
+
+
+        @media (max-width: 450px) {
+
+            .project-buttons {
+
+                flex-direction:
+                    column;
+            }
+
+
+            .project-image {
+
+                height: 200px;
+            }
+
+
+            .project-icon {
+
+                font-size: 70px;
+            }
+
+
+            .section-heading h1 {
+
+                font-size: 42px;
+            }
+        }
+
+
+        /* =========================================
+           REDUCE MOTION FOR ACCESSIBILITY
+        ========================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                scroll-behavior:
+                    auto !important;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         ANIMATED BACKGROUND
+    ========================================= -->
+
+    <div class="animated-background">
+
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+
+    </div>
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================= -->
+
+    <header>
+
+        <nav>
+
+            <a href="index.html" class="logo">
+                Prajwal <span>Naik</span>
+            </a>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="education.html">
+                        Education
+                    </a>
+                </li>
+
+                <li>
+                    <a href="skills.html">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html" class="active">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         PROJECTS
+    ========================================= -->
+
+    <main>
+
+        <section class="projects-section">
+
+
+            <!-- =================================
+                 MAIN ANIMATED HEADING
+            ================================= -->
+
+            <div class="section-heading">
+
+                <small>
+                    ✦ MY WORK ✦
+                </small>
+
+
+                <h1>
+                    My <span>Projects</span>
+                </h1>
+
+
+                <p>
+                    Here are some of my projects that demonstrate
+                    my skills in machine learning, Python,
+                    web development and application development.
+                </p>
+
+            </div>
+
+
+            <!-- =================================
+                 PROJECT CARDS
+            ================================= -->
+
+            <div class="projects-container">
+
+
+                <!-- PROJECT 1 -->
+
+                <article class="project-card">
+
+                    <div class="project-image rainfall-image">
+
+                        <div class="project-number">
+                            01
+                        </div>
+
+                        <div class="project-icon">
+                            🌧️
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <span class="project-category">
+                            Machine Learning
+                        </span>
+
+
+                        <h2>
+                            Rainfall Prediction
+                        </h2>
+
+
+                        <p>
+                            A machine learning project that predicts
+                            rainfall using historical weather data.
+                            The project analyzes weather features and
+                            uses a trained machine learning model to
+                            predict rainfall.
+                        </p>
+
+
+                        <div class="tech-list">
+
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>NumPy</span>
+                            <span>Scikit-learn</span>
+                            <span>Matplotlib</span>
+                            <span>Machine Learning</span>
+
+                        </div>
+
+
+                        <div class="project-buttons">
+
+                            <a href="#"
+                               class="project-btn demo-btn">
+                                View Project
+                            </a>
+
+
+                            <a href="https://github.com/prajwalprajwalnaik113-cloud"
+                               class="project-btn github-btn">
+                                GitHub
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 2 -->
+
+                <article class="project-card">
+
+                    <div class="project-image shopping-image">
+
+                        <div class="project-number">
+                            02
+                        </div>
+
+
+                        <div class="project-icon">
+                            🛒
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <span class="project-category">
+                            Web Development
+                        </span>
+
+
+                        <h2>
+                            Shopping Cart
+                        </h2>
+
+
+                        <p>
+                            A responsive shopping cart application
+                            where users can view products, add items
+                            to their cart, change quantities and
+                            calculate the total price dynamically.
+                        </p>
+
+
+                        <div class="tech-list">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>DOM</span>
+                            <span>Responsive Design</span>
+                              <span>MySQL</span>
+                               <span>Python</span>
+                        </div>
+
+
+                        <div class="project-buttons">
+
+                            <a href="#"
+                               class="project-btn demo-btn">
+                                View Project
+                            </a>
+
+
+                            <a href="https://github.com/prajwalprajwalnaik113-cloud"
+                               class="project-btn github-btn">
+                                GitHub
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Your Name. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
