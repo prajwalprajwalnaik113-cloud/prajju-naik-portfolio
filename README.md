@@ -1,1 +1,2456 @@
-# prajju-naik-portfolio
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Prajwal Naik | Web Developer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+    background:#030712;
+    color:white;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+::selection{
+    background:#38bdf8;
+    color:#020617;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#030712;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(#38bdf8,#8b5cf6,#ec4899);
+    border-radius:20px;
+}
+
+
+/* =========================================================
+   CURSOR GLOW
+========================================================= */
+
+.cursor-glow{
+    position:fixed;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:9999;
+
+    background:radial-gradient(
+        circle,
+        rgba(56,189,248,.12),
+        transparent 65%
+    );
+
+    transform:translate(-50%,-50%);
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-100;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0,217,255,.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(124,58,237,.12),
+            transparent 30%
+        ),
+        #030712;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.grid-background{
+    position:absolute;
+    inset:0;
+
+    background-image:
+        linear-gradient(
+            rgba(56,189,248,.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(56,189,248,.045) 1px,
+            transparent 1px
+        );
+
+    background-size:55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+
+    animation:gridMove 20s linear infinite;
+}
+
+@keyframes gridMove{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(55px);
+    }
+}
+
+
+/* =========================================================
+   ORBS
+========================================================= */
+
+.gradient-orb{
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    filter:blur(110px);
+
+    opacity:.22;
+
+    animation:orbMove 16s ease-in-out infinite alternate;
+}
+
+.orb-one{
+    background:#00d9ff;
+    top:-200px;
+    left:-180px;
+}
+
+.orb-two{
+    background:#7c3aed;
+    right:-200px;
+    bottom:-180px;
+    animation-delay:3s;
+}
+
+.orb-three{
+    width:300px;
+    height:300px;
+
+    background:#ec4899;
+
+    left:45%;
+    top:40%;
+
+    animation-delay:6s;
+}
+
+@keyframes orbMove{
+
+    0%{
+        transform:translate(0,0) scale(1);
+    }
+
+    50%{
+        transform:translate(120px,-90px) scale(1.25);
+    }
+
+    100%{
+        transform:translate(-100px,100px) scale(.9);
+    }
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-20;
+}
+
+.particle{
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:#38bdf8;
+
+    box-shadow:0 0 12px #38bdf8;
+
+    animation:particleFloat 9s linear infinite;
+    opacity:0;
+}
+
+.particle:nth-child(1){left:5%;top:80%;animation-delay:0s}
+.particle:nth-child(2){left:12%;top:50%;animation-delay:1s}
+.particle:nth-child(3){left:20%;top:90%;animation-delay:2s}
+.particle:nth-child(4){left:30%;top:30%;animation-delay:3s}
+.particle:nth-child(5){left:40%;top:75%;animation-delay:4s}
+.particle:nth-child(6){left:50%;top:20%;animation-delay:1s}
+.particle:nth-child(7){left:60%;top:80%;animation-delay:5s}
+.particle:nth-child(8){left:70%;top:35%;animation-delay:2s}
+.particle:nth-child(9){left:80%;top:70%;animation-delay:4s}
+.particle:nth-child(10){left:90%;top:20%;animation-delay:3s}
+.particle:nth-child(11){left:25%;top:10%;animation-delay:5s}
+.particle:nth-child(12){left:75%;top:90%;animation-delay:6s}
+
+@keyframes particleFloat{
+
+    0%{
+        transform:translateY(100px) scale(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:.8;
+    }
+
+    80%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:translateY(-400px) scale(1.5);
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    z-index:1000;
+
+    background:rgba(3,7,18,.55);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.07);
+
+    transition:.4s;
+}
+
+header.scrolled{
+    background:rgba(3,7,18,.92);
+
+    box-shadow:
+        0 10px 50px rgba(0,0,0,.45);
+}
+
+nav{
+    max-width:1250px;
+    height:75px;
+
+    margin:auto;
+    padding:0 25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo{
+    font-size:27px;
+    font-weight:900;
+    letter-spacing:-1.5px;
+
+    position:relative;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+.logo::after{
+    content:"";
+
+    position:absolute;
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    right:-12px;
+    bottom:5px;
+
+    background:#a78bfa;
+
+    box-shadow:0 0 20px #a78bfa;
+
+    animation:logoPulse 1.5s infinite;
+}
+
+@keyframes logoPulse{
+
+    50%{
+        transform:scale(1.7);
+    }
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+
+    list-style:none;
+}
+
+.nav-links a{
+    position:relative;
+
+    color:#cbd5e1;
+
+    font-size:14px;
+    font-weight:500;
+
+    padding:10px 0;
+
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#38bdf8;
+}
+
+.nav-links a::after{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:0;
+
+    width:0;
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        #38bdf8,
+        #a78bfa,
+        #ec4899
+    );
+
+    transform:translateX(-50%);
+
+    transition:.4s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.menu-toggle{
+    display:none;
+
+    width:42px;
+    height:42px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:140px 25px 80px;
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    align-items:center;
+
+    gap:70px;
+
+    position:relative;
+}
+
+
+/* =========================================================
+   HERO ENTRANCE
+========================================================= */
+
+.hero-text{
+    animation:
+        heroEnter 1.2s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes heroEnter{
+
+    from{
+        opacity:0;
+        transform:translateX(-100px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+
+/* =========================================================
+   HELLO BADGE
+========================================================= */
+
+.hello{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:9px 16px;
+
+    margin-bottom:25px;
+
+    color:#7dd3fc;
+
+    font-size:13px;
+
+    border:1px solid rgba(56,189,248,.3);
+
+    border-radius:30px;
+
+    background:rgba(56,189,248,.06);
+
+    box-shadow:
+        0 0 30px rgba(56,189,248,.08);
+
+    animation:badgeFloat 3s ease-in-out infinite;
+}
+
+.hello-dot{
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    box-shadow:0 0 15px #22c55e;
+
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+
+    50%{
+        transform:scale(1.7);
+        opacity:.5;
+    }
+}
+
+@keyframes badgeFloat{
+
+    50%{
+        transform:translateY(-5px);
+    }
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.hero h1{
+    font-size:clamp(52px,7vw,85px);
+
+    line-height:.98;
+
+    letter-spacing:-5px;
+
+    margin-bottom:25px;
+}
+
+.gradient-text{
+    background:
+        linear-gradient(
+            90deg,
+            #38bdf8,
+            #818cf8,
+            #c084fc,
+            #ec4899,
+            #38bdf8
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0%;
+    }
+
+    50%{
+        background-position:100%;
+    }
+
+    100%{
+        background-position:0%;
+    }
+}
+
+
+/* =========================================================
+   TYPING
+========================================================= */
+
+.typing-container{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    margin-bottom:25px;
+
+    font-size:25px;
+
+    color:#cbd5e1;
+}
+
+.typing{
+    color:#38bdf8;
+
+    font-weight:700;
+
+    border-right:2px solid #38bdf8;
+
+    padding-right:7px;
+
+    animation:cursorBlink .7s infinite;
+}
+
+@keyframes cursorBlink{
+
+    50%{
+        border-color:transparent;
+    }
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-description{
+    max-width:650px;
+
+    color:#94a3b8;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    margin-bottom:35px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.btn{
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    padding:15px 28px;
+
+    border-radius:12px;
+
+    font-size:14px;
+    font-weight:700;
+
+    overflow:hidden;
+
+    transition:.35s;
+}
+
+.btn::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:100%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.4),
+            transparent
+        );
+
+    transition:.6s;
+}
+
+.btn:hover::before{
+    left:120%;
+}
+
+.primary-btn{
+    color:#020617;
+
+    background:
+        linear-gradient(
+            90deg,
+            #38bdf8,
+            #818cf8
+        );
+
+    box-shadow:
+        0 10px 35px rgba(56,189,248,.2);
+}
+
+.primary-btn:hover{
+    transform:
+        translateY(-7px)
+        scale(1.03);
+
+    box-shadow:
+        0 20px 55px rgba(56,189,248,.35);
+}
+
+.secondary-btn{
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.04);
+}
+
+.secondary-btn:hover{
+    transform:
+        translateY(-7px);
+
+    border-color:#38bdf8;
+
+    color:#38bdf8;
+
+    box-shadow:
+        0 15px 40px rgba(56,189,248,.12);
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.social-links{
+    display:flex;
+    gap:12px;
+    margin-top:30px;
+}
+
+.social-links a{
+    width:43px;
+    height:43px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    color:#cbd5e1;
+
+    font-size:11px;
+    font-weight:700;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    background:rgba(255,255,255,.03);
+
+    transition:.35s;
+}
+
+.social-links a:hover{
+    color:#020617;
+
+    background:#38bdf8;
+
+    transform:
+        translateY(-7px)
+        rotate(10deg);
+
+    box-shadow:
+        0 15px 35px rgba(56,189,248,.3);
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-area{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    animation:
+        profileEnter
+        1.4s
+        cubic-bezier(.2,.8,.2,1);
+
+    transition:transform .2s ease-out;
+}
+
+@keyframes profileEnter{
+
+    from{
+        opacity:0;
+        transform:translateX(100px) scale(.7);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   PROFILE ORBIT
+========================================================= */
+
+.profile-orbit{
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    border:1px solid rgba(56,189,248,.15);
+
+    border-radius:50%;
+
+    animation:orbitRotate 15s linear infinite;
+}
+
+.profile-orbit::before,
+.profile-orbit::after{
+    content:"";
+
+    position:absolute;
+
+    width:12px;
+    height:12px;
+
+    border-radius:50%;
+
+    background:#38bdf8;
+
+    box-shadow:
+        0 0 20px #38bdf8,
+        0 0 40px #38bdf8;
+}
+
+.profile-orbit::before{
+    top:20px;
+    left:50%;
+}
+
+.profile-orbit::after{
+    bottom:40px;
+    right:10px;
+
+    background:#ec4899;
+
+    box-shadow:
+        0 0 20px #ec4899,
+        0 0 40px #ec4899;
+}
+
+@keyframes orbitRotate{
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   PROFILE RING
+========================================================= */
+
+.profile-ring{
+    width:380px;
+    height:380px;
+
+    padding:8px;
+
+    border-radius:50%;
+
+    position:relative;
+
+    background:
+        conic-gradient(
+            from 0deg,
+            #38bdf8,
+            #818cf8,
+            #c084fc,
+            #ec4899,
+            #38bdf8
+        );
+
+    animation:rotateRing 8s linear infinite;
+
+    box-shadow:
+        0 0 90px rgba(56,189,248,.2);
+}
+
+@keyframes rotateRing{
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.profile-ring::before{
+    content:"";
+
+    position:absolute;
+
+    inset:-20px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(56,189,248,.2);
+
+    animation:ringPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes ringPulse{
+
+    50%{
+        transform:scale(1.06);
+        opacity:1;
+    }
+}
+
+.profile-inner{
+    width:100%;
+    height:100%;
+
+    padding:8px;
+
+    border-radius:50%;
+
+    background:#030712;
+
+    animation:counterRotate 8s linear infinite;
+}
+
+@keyframes counterRotate{
+
+    to{
+        transform:rotate(-360deg);
+    }
+}
+
+.profile-inner img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid #111827;
+
+    transition:.5s;
+}
+
+.profile-inner img:hover{
+    transform:scale(1.05);
+}
+
+
+/* =========================================================
+   FLOATING BADGES
+========================================================= */
+
+.floating-badge{
+    position:absolute;
+
+    padding:13px 18px;
+
+    border-radius:14px;
+
+    background:rgba(15,23,42,.8);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.4);
+
+    font-size:12px;
+    font-weight:700;
+
+    z-index:5;
+
+    animation:floatBadge 4s ease-in-out infinite;
+}
+
+.badge-one{
+    top:12%;
+    left:-30px;
+    color:#38bdf8;
+}
+
+.badge-two{
+    bottom:12%;
+    right:-30px;
+    color:#c084fc;
+
+    animation-delay:1s;
+}
+
+@keyframes floatBadge{
+
+    50%{
+        transform:translateY(-18px) rotate(2deg);
+    }
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.scroll-indicator{
+    position:absolute;
+
+    left:50%;
+    bottom:20px;
+
+    transform:translateX(-50%);
+
+    color:#64748b;
+
+    font-size:9px;
+
+    letter-spacing:4px;
+
+    text-align:center;
+
+    animation:scrollFade 2s infinite;
+}
+
+.mouse{
+    width:21px;
+    height:34px;
+
+    margin:8px auto;
+
+    border:2px solid #475569;
+
+    border-radius:15px;
+
+    position:relative;
+}
+
+.mouse::before{
+    content:"";
+
+    position:absolute;
+
+    top:5px;
+    left:50%;
+
+    width:3px;
+    height:7px;
+
+    background:#38bdf8;
+
+    border-radius:5px;
+
+    transform:translateX(-50%);
+
+    animation:mouseMove 1.5s infinite;
+}
+
+@keyframes mouseMove{
+
+    from{
+        opacity:0;
+        transform:translate(-50%,0);
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    to{
+        opacity:0;
+        transform:translate(-50%,10px);
+    }
+}
+
+@keyframes scrollFade{
+
+    50%{
+        opacity:1;
+    }
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+    max-width:1250px;
+
+    margin:-10px auto 100px;
+
+    padding:0 25px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+}
+
+.stat-card{
+    position:relative;
+
+    padding:30px 20px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    overflow:hidden;
+
+    transition:.45s;
+}
+
+.stat-card::before{
+    content:"";
+
+    position:absolute;
+
+    inset:-100%;
+
+    background:
+        conic-gradient(
+            transparent,
+            rgba(56,189,248,.15),
+            transparent 30%
+        );
+
+    animation:cardSpin 6s linear infinite;
+}
+
+@keyframes cardSpin{
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.stat-card > *{
+    position:relative;
+    z-index:2;
+}
+
+.stat-card:hover{
+    transform:
+        translateY(-12px)
+        scale(1.02);
+
+    border-color:rgba(56,189,248,.5);
+
+    box-shadow:
+        0 25px 60px rgba(56,189,248,.12);
+}
+
+.stat-number{
+    font-size:38px;
+
+    font-weight:900;
+
+    color:#38bdf8;
+
+    text-shadow:
+        0 0 20px rgba(56,189,248,.3);
+
+    margin-bottom:5px;
+}
+
+.stat-card p{
+    color:#64748b;
+    font-size:12px;
+}
+
+
+/* =========================================================
+   SECTION DIVIDER
+========================================================= */
+
+.section-line{
+    width:80%;
+    max-width:1000px;
+
+    height:1px;
+
+    margin:0 auto 80px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #38bdf8,
+            #a78bfa,
+            transparent
+        );
+
+    opacity:.5;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+        gap:60px;
+        padding-top:150px;
+    }
+
+    .hero-text{
+        order:2;
+    }
+
+    .profile-area{
+        order:1;
+    }
+
+    .hero-description{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .buttons,
+    .social-links{
+        justify-content:center;
+    }
+
+    .profile-ring{
+        width:320px;
+        height:320px;
+    }
+
+    .profile-orbit{
+        width:390px;
+        height:390px;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:700px){
+
+    nav{
+        height:70px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+
+        top:70px;
+        left:15px;
+        right:15px;
+
+        display:none;
+
+        flex-direction:column;
+
+        gap:0;
+
+        padding:15px;
+
+        border-radius:18px;
+
+        background:rgba(3,7,18,.96);
+
+        border:1px solid rgba(255,255,255,.1);
+
+        backdrop-filter:blur(25px);
+
+        box-shadow:
+            0 25px 60px rgba(0,0,0,.5);
+    }
+
+    .nav-links.show{
+        display:flex;
+        animation:menuOpen .35s ease;
+    }
+
+    @keyframes menuOpen{
+
+        from{
+            opacity:0;
+            transform:translateY(-15px);
+        }
+
+        to{
+            opacity:1;
+            transform:translateY(0);
+        }
+    }
+
+    .nav-links li{
+        width:100%;
+    }
+
+    .nav-links a{
+        display:block;
+        text-align:center;
+        padding:14px;
+    }
+
+    .hero{
+        padding:130px 18px 70px;
+    }
+
+    .hero h1{
+        font-size:55px;
+        letter-spacing:-3px;
+    }
+
+    .typing-container{
+        justify-content:center;
+        font-size:20px;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .profile-ring{
+        width:270px;
+        height:270px;
+    }
+
+    .profile-orbit{
+        width:330px;
+        height:330px;
+    }
+
+    .badge-one{
+        left:-5px;
+    }
+
+    .badge-two{
+        right:-5px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+        margin-bottom:60px;
+    }
+
+    .scroll-indicator{
+        display:none;
+    }
+
+    .cursor-glow{
+        display:none;
+    }
+}
+
+
+@media(max-width:480px){
+
+    .logo{
+        font-size:22px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .typing-container{
+        font-size:17px;
+    }
+
+    .hello{
+        font-size:11px;
+    }
+
+    .profile-ring{
+        width:230px;
+        height:230px;
+    }
+
+    .profile-orbit{
+        width:280px;
+        height:280px;
+    }
+
+    .floating-badge{
+        font-size:9px;
+        padding:9px 11px;
+    }
+
+    .badge-one{
+        left:-8px;
+    }
+
+    .badge-two{
+        right:-8px;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .buttons{
+        width:100%;
+    }
+
+    .gradient-orb{
+        width:200px;
+        height:200px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- CURSOR -->
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+
+<!-- BACKGROUND -->
+
+<div class="background">
+
+    <div class="grid-background"></div>
+
+    <div class="gradient-orb orb-one"></div>
+
+    <div class="gradient-orb orb-two"></div>
+
+    <div class="gradient-orb orb-three"></div>
+
+</div>
+
+
+<!-- PARTICLES -->
+
+<div class="particles">
+
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+
+</div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header id="header">
+
+<nav>
+
+    <a href="index.html" class="logo">
+                Prajwal <pan>Naik</span>
+        
+    </a>
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu">
+        ☰
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+
+        <li>
+            <a href="index.html" class="active">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="about.html">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="education.html">
+                Education
+            </a>
+        </li>
+
+        <li>
+            <a href="skills.html">
+                Skills
+            </a>
+        </li>
+
+        <li>
+            <a href="projects.html">
+                Projects
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main>
+
+
+<section class="hero" id="home">
+
+
+    <!-- HERO TEXT -->
+
+    <div class="hero-text">
+
+        <div class="hello">
+
+            <span class="hello-dot"></span>
+
+            Available for opportunities
+
+        </div>
+
+
+        <h1>
+
+            Hi, I'm
+
+            <br>
+
+            <span class="gradient-text">
+                Prajwal Naik
+            </span>
+
+        </h1>
+
+
+        <div class="typing-container">
+
+            <span>
+                I'm a
+            </span>
+
+            <span
+                class="typing"
+                id="typingText">
+            </span>
+
+        </div>
+
+
+        <p class="hero-description">
+
+            I am a passionate web developer who enjoys
+            creating modern, responsive and interactive
+            websites. I love transforming ideas into
+            beautiful digital experiences using technology,
+            creativity and clean design.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="projects.html"
+                class="btn primary-btn">
+
+                View My Projects →
+
+            </a>
+
+            <a
+                href="contact.html"
+                class="btn secondary-btn">
+
+                Let's Talk ✦
+
+            </a>
+
+        </div>
+
+
+        <div class="social-links">
+
+            <a href="https://github.com/prajwalprajwalnaik113-cloud" title="GitHub">
+                Git
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/prajwal-naik-642bba43b/?isSelfProfile=true"
+                title="LinkedIn">
+
+                In
+
+            </a>
+
+            <a
+                href="https://www.instagram.com/mr_p_r_a_j_w_a_l___n_a_i_k?stkn=MXN5d2U5ZG1lMDVkNQ=="
+                title="Instagram">
+
+                Ig
+
+            </a>
+
+            <a href="#" title="X">
+                X
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PROFILE
+    ====================================================== -->
+
+    <div class="profile-area" id="profileArea">
+
+        <div class="profile-orbit"></div>
+
+        <div class="profile-ring">
+
+            <div class="profile-inner">
+
+                <!--
+                    IMPORTANT:
+                    Put your image in the project folder.
+
+                    Example:
+                    images/profile.jpg
+
+                    Then use:
+                    src="images/profile.jpg"
+                -->
+
+                <img
+                    src="C:\Users\User\Desktop\pgcet\WhatsApp Image 2026-10-04 at 10.10.52 AM.jpeg"
+                    alt="Prajwal Naik Profile Photo">
+
+            </div>
+
+        </div>
+
+
+        <div class="floating-badge badge-one">
+
+            ⚡ Creative Developer
+
+        </div>
+
+
+        <div class="floating-badge badge-two">
+
+            🚀 MCA Student
+
+        </div>
+
+    </div>
+
+
+    <!-- SCROLL -->
+
+    <div class="scroll-indicator">
+
+        SCROLL
+
+        <div class="mouse"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<section class="stats" id="stats">
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-number"
+            data-target="3">
+
+            0+
+
+        </div>
+
+        <p>
+            Projects Completed
+        </p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-number"
+            data-target="2">
+
+            0+
+
+        </div>
+
+        <p>
+            Years Learning
+        </p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-number"
+            data-target="15">
+
+            0+
+
+        </div>
+
+        <p>
+            Technologies
+        </p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-number"
+            data-target="100">
+
+            0%
+
+        </div>
+
+        <p>
+            Passion
+        </p>
+
+    </div>
+
+</section>
+
+
+<div class="section-line"></div>
+
+
+</main>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   CURSOR GLOW
+========================================================= */
+
+const cursorGlow =
+    document.getElementById("cursorGlow");
+
+document.addEventListener("mousemove", function(e){
+
+    cursorGlow.style.left =
+        e.clientX + "px";
+
+    cursorGlow.style.top =
+        e.clientY + "px";
+
+});
+
+
+/* =========================================================
+   TYPING EFFECT
+========================================================= */
+
+const typingElement =
+    document.getElementById("typingText");
+
+const words = [
+
+    "Web Developer",
+    "Full Stack Developer",
+    "Frontend Developer",
+    "Creative Coder",
+    "Problem Solver"
+
+];
+
+let wordIndex = 0;
+let characterIndex = 0;
+let deleting = false;
+
+
+function typeEffect(){
+
+    const word =
+        words[wordIndex];
+
+
+    if(!deleting){
+
+        typingElement.textContent =
+            word.substring(
+                0,
+                characterIndex + 1
+            );
+
+        characterIndex++;
+
+
+        if(
+            characterIndex ===
+            word.length
+        ){
+
+            deleting = true;
+
+            setTimeout(
+                typeEffect,
+                1400
+            );
+
+            return;
+        }
+
+    }else{
+
+        typingElement.textContent =
+            word.substring(
+                0,
+                characterIndex - 1
+            );
+
+        characterIndex--;
+
+
+        if(characterIndex === 0){
+
+            deleting = false;
+
+            wordIndex =
+                (
+                    wordIndex + 1
+                ) %
+                words.length;
+
+        }
+
+    }
+
+
+    setTimeout(
+        typeEffect,
+        deleting ? 45 : 90
+    );
+
+}
+
+typeEffect();
+
+
+/* =========================================================
+   HEADER SCROLL
+========================================================= */
+
+const header =
+    document.getElementById("header");
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        if(window.scrollY > 50){
+
+            header.classList.add("scrolled");
+
+        }else{
+
+            header.classList.remove("scrolled");
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+menuToggle.addEventListener(
+    "click",
+    function(){
+
+        navLinks.classList.toggle("show");
+
+        menuToggle.textContent =
+            navLinks.classList.contains("show")
+                ? "✕"
+                : "☰";
+
+    }
+);
+
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            function(){
+
+                navLinks.classList.remove("show");
+
+                menuToggle.textContent = "☰";
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   STAT COUNTER
+========================================================= */
+
+const counters =
+    document.querySelectorAll(".stat-number");
+
+let counterStarted = false;
+
+
+function startCounters(){
+
+    if(counterStarted){
+        return;
+    }
+
+    counterStarted = true;
+
+
+    counters.forEach(counter => {
+
+        const target =
+            Number(
+                counter.dataset.target
+            );
+
+        const duration = 1800;
+
+        const start =
+            performance.now();
+
+
+        function update(time){
+
+            const progress =
+                Math.min(
+                    (time - start) /
+                    duration,
+                    1
+                );
+
+
+            const eased =
+                1 -
+                Math.pow(
+                    1 - progress,
+                    3
+                );
+
+
+            const value =
+                Math.floor(
+                    eased * target
+                );
+
+
+            counter.textContent =
+                target === 100
+                    ? value + "%"
+                    : value + "+";
+
+
+            if(progress < 1){
+
+                requestAnimationFrame(update);
+
+            }
+
+        }
+
+
+        requestAnimationFrame(update);
+
+    });
+
+}
+
+
+const statsSection =
+    document.getElementById("stats");
+
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    startCounters();
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.3
+        }
+    );
+
+
+observer.observe(statsSection);
+
+
+/* =========================================================
+   3D PROFILE MOUSE EFFECT
+========================================================= */
+
+const profile =
+    document.getElementById("profileArea");
+
+
+document.addEventListener(
+    "mousemove",
+    function(e){
+
+        if(window.innerWidth < 900){
+            return;
+        }
+
+
+        const x =
+            (
+                e.clientX /
+                window.innerWidth -
+                .5
+            ) * 20;
+
+
+        const y =
+            (
+                e.clientY /
+                window.innerHeight -
+                .5
+            ) * 20;
+
+
+        profile.style.transform =
+            `
+            translate(${x}px,${y}px)
+            rotateX(${-y / 4}deg)
+            rotateY(${x / 4}deg)
+            `;
+
+    }
+);
+
+
+document.addEventListener(
+    "mouseleave",
+    function(){
+
+        profile.style.transform =
+            "translate(0,0) rotateX(0) rotateY(0)";
+
+    }
+);
+
+
+/* =========================================================
+   BUTTON RIPPLE
+========================================================= */
+
+document
+    .querySelectorAll(".btn")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function(e){
+
+                const ripple =
+                    document.createElement("span");
+
+                const rect =
+                    this.getBoundingClientRect();
+
+                const size =
+                    Math.max(
+                        rect.width,
+                        rect.height
+                    );
+
+
+                ripple.style.position =
+                    "absolute";
+
+                ripple.style.width =
+                    size + "px";
+
+                ripple.style.height =
+                    size + "px";
+
+                ripple.style.left =
+                    (
+                        e.clientX -
+                        rect.left -
+                        size / 2
+                    ) + "px";
+
+                ripple.style.top =
+                    (
+                        e.clientY -
+                        rect.top -
+                        size / 2
+                    ) + "px";
+
+                ripple.style.borderRadius =
+                    "50%";
+
+                ripple.style.background =
+                    "rgba(255,255,255,.3)";
+
+                ripple.style.transform =
+                    "scale(0)";
+
+                ripple.style.pointerEvents =
+                    "none";
+
+                ripple.style.animation =
+                    "ripple .7s linear";
+
+
+                this.appendChild(ripple);
+
+
+                setTimeout(
+                    () => ripple.remove(),
+                    700
+                );
+
+            }
+        );
+
+    });
+
+
+const rippleStyle =
+    document.createElement("style");
+
+rippleStyle.textContent = `
+
+@keyframes ripple{
+
+    to{
+
+        transform:scale(3);
+
+        opacity:0;
+
+    }
+
+}
+`;
+
+document.head.appendChild(rippleStyle);
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const currentPage =
+    window.location.pathname
+        .split("/")
+        .pop();
+
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+        const linkPage =
+            link
+                .getAttribute("href")
+                .split("/")
+                .pop();
+
+
+        if(
+            linkPage === currentPage
+        ){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+
+/* =========================================================
+   CARD TILT EFFECT
+========================================================= */
+
+document
+    .querySelectorAll(".stat-card")
+    .forEach(card => {
+
+        card.addEventListener(
+            "mousemove",
+            function(e){
+
+                if(window.innerWidth < 800){
+                    return;
+                }
+
+
+                const rect =
+                    this.getBoundingClientRect();
+
+
+                const x =
+                    e.clientX -
+                    rect.left;
+
+
+                const y =
+                    e.clientY -
+                    rect.top;
+
+
+                const rotateX =
+                    (
+                        y -
+                        rect.height / 2
+                    ) / 12;
+
+
+                const rotateY =
+                    (
+                        rect.width / 2 -
+                        x
+                    ) / 12;
+
+
+                this.style.transform =
+                    `
+                    translateY(-12px)
+                    perspective(600px)
+                    rotateX(${rotateX}deg)
+                    rotateY(${rotateY}deg)
+                    scale(1.02)
+                    `;
+
+            }
+        );
+
+
+        card.addEventListener(
+            "mouseleave",
+            function(){
+
+                this.style.transform = "";
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   PARALLAX ORBS
+========================================================= */
+
+document.addEventListener(
+    "mousemove",
+    function(e){
+
+        const x =
+            (
+                e.clientX /
+                window.innerWidth -
+                .5
+            );
+
+        const y =
+            (
+                e.clientY /
+                window.innerHeight -
+                .5
+            );
+
+
+        document
+            .querySelector(".orb-one")
+            .style.transform =
+                `
+                translate(
+                    ${x * 40}px,
+                    ${y * 40}px
+                )
+                `;
+
+
+        document
+            .querySelector(".orb-two")
+            .style.transform =
+                `
+                translate(
+                    ${x * -50}px,
+                    ${y * -50}px
+                )
+                `;
+
+    }
+);
+
+</script>
+
+</body>
+</html>
